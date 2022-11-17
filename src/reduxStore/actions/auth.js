@@ -57,6 +57,7 @@ export const registerAccount = (account, type) => async (dispatch) => {
 };
 
 export const getAccount = () => async (dispatch) => {
+	NProgress.start();
 	dispatch(setLoading(true));
 
 	if (localStorage.token) {
@@ -68,9 +69,13 @@ export const getAccount = () => async (dispatch) => {
 
 		dispatch({ type: GET_ACCOUNT, payload: res.data });
 		dispatch(setLoading(false));
+
+		NProgress.done();
 	} catch (err) {
 		console.log(err);
 		dispatch(setLoading(false));
+
+		NProgress.done();
 	}
 };
 

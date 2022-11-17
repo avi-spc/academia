@@ -36,22 +36,34 @@ export const enrollCourse = (accessCode) => async (dispatch) => {
 };
 
 export const getPerformance = () => async (dispatch) => {
+	NProgress.start();
+
 	try {
 		const res = await axios.get('/performance/student');
 
 		dispatch({ type: GET_PERFORMANCE, payload: res.data.studentPerformance });
+
+		NProgress.done();
 	} catch (err) {
 		console.log(err);
+
+		NProgress.done();
 	}
 };
 
 export const getStudentPerformance = (studentId) => async (dispatch) => {
+	NProgress.start();
+
 	try {
 		const res = await axios.get(`/performance/student/${studentId}`);
 
 		dispatch({ type: GET_PERFORMANCE, payload: res.data.studentPerformance });
+
+		NProgress.done();
 	} catch (err) {
 		console.log(err);
+
+		NProgress.done();
 	}
 };
 

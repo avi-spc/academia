@@ -56,12 +56,18 @@ export const getAllCourses = () => async (dispatch) => {
 };
 
 export const getIndividualCourse = (courseId) => async (dispatch) => {
+	NProgress.start();
+
 	try {
 		const res = await axios.get(`/courses/${courseId}`);
 
 		dispatch({ type: GET_INDIVIDUAL_COURSE, payload: res.data });
+
+		NProgress.done();
 	} catch (err) {
 		console.log(err);
+
+		NProgress.done();
 	}
 };
 
@@ -269,7 +275,7 @@ export const createStudyMaterial = (studyMaterial, courseId) => async (dispatch)
 		NProgress.done();
 	} catch (err) {
 		console.log(err);
-		
+
 		NProgress.done();
 	}
 };

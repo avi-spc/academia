@@ -11,6 +11,7 @@ import StudyMaterial from './StudyMaterial';
 const StudyMaterialDocket = ({
 	popup,
 	individualCourse,
+	auth: { account },
 	toggleUpdatePopup,
 	toggleUpdateDocPopup
 }) => {
@@ -21,6 +22,10 @@ const StudyMaterialDocket = ({
 			{individualCourse.course.studyMaterial.notes.map((note) => (
 				<StudyMaterial key={note._id} note={note} setNoteDetails={setNoteDetails} />
 			))}
+			{individualCourse.course.studyMaterial.notes.length === 0 &&
+				account.type === 'student' && (
+					<div className="empty-list text-medium-R center">No notes shared yet</div>
+				)}
 			{popup.isVisible && <CreateStudyMaterial courseId={individualCourse.course._id} />}
 			{popup.isUpdate && (
 				<UpdateStudyMaterial
@@ -41,7 +46,8 @@ const StudyMaterialDocket = ({
 
 const mapStateToProps = (state) => ({
 	popup: state.popup,
-	individualCourse: state.course.individualCourse
+	individualCourse: state.course.individualCourse,
+	auth: state.auth
 });
 
 export default connect(mapStateToProps, { toggleUpdatePopup, toggleUpdateDocPopup })(
