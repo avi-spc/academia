@@ -6,7 +6,7 @@ import { togglePopup } from '../../../reduxStore/actions/popus';
 import { getPerformance, unsubmitProject } from '../../../reduxStore/actions/performance';
 import { getStudentsEnrolled } from '../../../reduxStore/actions/course';
 import { timeInWords } from '../../../utils/timestampFormatter';
-import { baseUrl } from '../../utils/env';
+import { baseUrl } from '../../../utils/env';
 
 import SubmitProject from './SubmitProject';
 import TeamMember from './TeamMember';

@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { togglePopup } from '../../../reduxStore/actions/popus';
 import { getPerformance, unsubmitAssignment } from '../../../reduxStore/actions/performance';
 import { timeInWords } from '../../../utils/timestampFormatter';
-import { baseUrl } from '../../utils/env';
+import { baseUrl } from '../../../utils/env';
 
 import SubmitAssignment from './SubmitAssignment';
 

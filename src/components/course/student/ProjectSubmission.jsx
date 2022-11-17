@@ -1,5 +1,5 @@
 import { timeInWords } from '../../../utils/timestampFormatter';
-import { baseUrl } from '../../utils/env';
+import { baseUrl } from '../../../utils/env';
 
 const ProjectSubmission = ({ studentId, submission }) => {
 	return (
