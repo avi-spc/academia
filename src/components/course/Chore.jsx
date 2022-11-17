@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { toggleUpdatePopup, toggleUpdateDocPopup } from '../../reduxStore/actions/popus';
 import { useState } from 'react';
 import { timeInWords } from '../../utils/timestampFormatter';
+import { baseUrl } from '../../utils/env';
 
 const Chore = ({
 	toggleUpdatePopup,
@@ -80,7 +81,7 @@ const Chore = ({
 					</div>
 					<a
 						className="btn btn--round"
-						href={`http://localhost:5000/api/performance/submissions/file/${chore.documentId}`}
+						href={`${baseUrl}/performance/submissions/file/${chore.documentId}`}
 						target="_blank"
 					>
 						View details

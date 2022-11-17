@@ -6,6 +6,7 @@ import { togglePopup } from '../../../reduxStore/actions/popus';
 import { getPerformance, unsubmitProject } from '../../../reduxStore/actions/performance';
 import { getStudentsEnrolled } from '../../../reduxStore/actions/course';
 import { timeInWords } from '../../../utils/timestampFormatter';
+import { baseUrl } from '../../utils/env';
 
 import SubmitProject from './SubmitProject';
 import TeamMember from './TeamMember';
@@ -65,7 +66,7 @@ const ChoreProject = ({
 					</div>
 					<a
 						className="btn btn--round"
-						href={`http://localhost:5000/api/performance/submissions/file/${coursePerformance.course.project.documentId}`}
+						href={`${baseUrl}/performance/submissions/file/${coursePerformance.course.project.documentId}`}
 						target="_blank"
 					>
 						View details
@@ -90,7 +91,7 @@ const ChoreProject = ({
 							</div>
 							<a
 								className="btn btn--round"
-								href={`http://localhost:5000/api/performance/submissions/file/${coursePerformance.project.documentId}`}
+								href={`${baseUrl}/performance/submissions/file/${coursePerformance.project.documentId}`}
 								target="_blank"
 							>
 								View submission

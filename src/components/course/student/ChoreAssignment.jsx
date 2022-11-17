@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { togglePopup } from '../../../reduxStore/actions/popus';
 import { getPerformance, unsubmitAssignment } from '../../../reduxStore/actions/performance';
 import { timeInWords } from '../../../utils/timestampFormatter';
+import { baseUrl } from '../../utils/env';
 
 import SubmitAssignment from './SubmitAssignment';
 
@@ -80,7 +81,7 @@ const ChoreAssignment = ({
 						</div>
 						<a
 							className="btn btn--round"
-							href={`http://localhost:5000/api/performance/submissions/file/${assignment.documentId}`}
+							href={`${baseUrl}/performance/submissions/file/${assignment.documentId}`}
 							target="_blank"
 						>
 							View details
@@ -105,7 +106,7 @@ const ChoreAssignment = ({
 								</div>
 								<a
 									className="btn btn--round"
-									href={`http://localhost:5000/api/performance/submissions/file/${submission.documentId}`}
+									href={`${baseUrl}/performance/submissions/file/${submission.documentId}`}
 									target="_blank"
 								>
 									View submission

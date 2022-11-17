@@ -1,4 +1,5 @@
 import { timeInWords } from '../../../utils/timestampFormatter';
+import { baseUrl } from '../../utils/env';
 
 const AssignmentSubmission = ({ studentId, submission }) => {
 	return (
@@ -25,7 +26,7 @@ const AssignmentSubmission = ({ studentId, submission }) => {
 				</div>
 				<a
 					className="btn btn--round"
-					href={`http://localhost:5000/api/performance/submissions/file/${submission.documentId}`}
+					href={`${baseUrl}/performance/submissions/file/${submission.documentId}`}
 					target="_blank"
 				>
 					View submission

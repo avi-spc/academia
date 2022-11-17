@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 
 import { toggleUpdatePopup, toggleUpdateDocPopup } from '../../reduxStore/actions/popus';
 import { timeInWords } from '../../utils/timestampFormatter';
+import { baseUrl } from '../../utils/env';
+
 
 const StudyMaterialDocket = ({
 	popup,
@@ -61,7 +63,7 @@ const StudyMaterialDocket = ({
 				<div className="study-material__details">
 					<a
 						className="btn btn--round"
-						href={`http://localhost:5000/api/performance/submissions/file/${note.documentId}`}
+						href={`${baseUrl}/performance/submissions/file/${note.documentId}`}
 						target="_blank"
 					>
 						View PDF
