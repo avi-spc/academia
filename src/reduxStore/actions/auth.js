@@ -1,5 +1,7 @@
 import axios from '../../utils/axiosInstance';
 
+import NProgress from 'nprogress';
+
 import {
 	REGISTER_SUCCESS,
 	REGISTER_ERROR,
@@ -13,6 +15,8 @@ import { setAuthToken } from '../../utils/setAuthToken';
 import { setAlert } from './alert';
 
 export const registerAccount = (account, type) => async (dispatch) => {
+	NProgress.start();
+
 	const config = {
 		headers: {
 			'Content-Type': 'application/json'
@@ -37,6 +41,8 @@ export const registerAccount = (account, type) => async (dispatch) => {
 
 		dispatch({ type: REGISTER_SUCCESS, payload: res.data });
 		dispatch(getAccount());
+
+		NProgress.done();
 	} catch (err) {
 		const errors = err.response.data.errors;
 
@@ -45,6 +51,8 @@ export const registerAccount = (account, type) => async (dispatch) => {
 		});
 
 		dispatch({ type: REGISTER_ERROR });
+
+		NProgress.done();
 	}
 };
 
@@ -67,6 +75,8 @@ export const getAccount = () => async (dispatch) => {
 };
 
 export const loginAccount = (account, type) => async (dispatch) => {
+	NProgress.start();
+
 	const config = {
 		headers: {
 			'Content-Type': 'application/json'
@@ -91,6 +101,8 @@ export const loginAccount = (account, type) => async (dispatch) => {
 
 		dispatch({ type: LOGIN_SUCCESS, payload: res.data });
 		dispatch(getAccount());
+
+		NProgress.done();
 	} catch (err) {
 		const errors = err.response.data.errors;
 
@@ -99,6 +111,7 @@ export const loginAccount = (account, type) => async (dispatch) => {
 		});
 
 		dispatch({ type: LOGIN_ERROR });
+		NProgress.done();
 	}
 };
 

@@ -1,5 +1,7 @@
 import axios from '../../utils/axiosInstance';
 
+import NProgress from 'nprogress';
+
 import {
 	CREATE_ANNOUNCEMENT,
 	CREATE_COURSE_SUCCESS,
@@ -15,6 +17,8 @@ import {
 import { setAlert } from './alert';
 
 export const createCourse = (course) => async (dispatch) => {
+	NProgress.start();
+
 	const config = {
 		headers: {
 			'Content-Type': 'application/json'
@@ -28,8 +32,16 @@ export const createCourse = (course) => async (dispatch) => {
 
 		dispatch({ type: GET_ACCOUNT, payload: res.data });
 		dispatch(setAlert(res.data.msg, 'success'));
+
+		NProgress.done();
 	} catch (err) {
-		console.log(err);
+		const errors = err.response.data.errors;
+
+		errors.forEach((error) => {
+			dispatch(setAlert(error.msg, 'error'));
+		});
+
+		NProgress.done();
 	}
 };
 
@@ -64,6 +76,8 @@ export const getAnnouncements = (courseId) => async (dispatch) => {
 };
 
 export const createAnnouncement = (announcement, courseId) => async (dispatch) => {
+	NProgress.start();
+
 	const config = {
 		headers: {
 			'Content-Type': 'application/json'
@@ -77,12 +91,18 @@ export const createAnnouncement = (announcement, courseId) => async (dispatch) =
 
 		dispatch({ type: GET_ANNOUNCEMENTS, payload: res.data.announcements });
 		dispatch(setAlert(res.data.msg, 'success'));
+
+		NProgress.done();
 	} catch (err) {
 		console.log(err);
+
+		NProgress.done();
 	}
 };
 
 export const updateAnnouncement = (announcement, courseId, announcementId) => async (dispatch) => {
+	NProgress.start();
+
 	const config = {
 		headers: {
 			'Content-Type': 'application/json'
@@ -96,12 +116,18 @@ export const updateAnnouncement = (announcement, courseId, announcementId) => as
 
 		dispatch({ type: GET_ANNOUNCEMENTS, payload: res.data.announcements });
 		dispatch(setAlert(res.data.msg, 'success'));
+
+		NProgress.done();
 	} catch (err) {
 		console.log(err);
+
+		NProgress.done();
 	}
 };
 
 export const createChore = (chore, courseId, type) => async (dispatch) => {
+	NProgress.start();
+
 	const config = {
 		headers: {
 			'Content-Type': 'application/json'
@@ -126,12 +152,18 @@ export const createChore = (chore, courseId, type) => async (dispatch) => {
 
 		dispatch({ type: GET_INDIVIDUAL_COURSE, payload: res.data });
 		dispatch(setAlert(res.data.msg, 'success'));
+
+		NProgress.done();
 	} catch (err) {
 		console.log(err);
+
+		NProgress.done();
 	}
 };
 
 export const updateChore = (chore, courseId, choreId, type) => async (dispatch) => {
+	NProgress.start();
+
 	const config = {
 		headers: {
 			'Content-Type': 'application/json'
@@ -156,13 +188,19 @@ export const updateChore = (chore, courseId, choreId, type) => async (dispatch) 
 
 		dispatch({ type: GET_INDIVIDUAL_COURSE, payload: res.data });
 		dispatch(setAlert(res.data.msg, 'success'));
+
+		NProgress.done();
 	} catch (err) {
 		console.log(err);
+
+		NProgress.done();
 	}
 };
 
 export const updateChoreDoc =
 	(document, courseId, choreId, documentId, type) => async (dispatch) => {
+		NProgress.start();
+
 		const config = {
 			headers: {
 				'Content-Type': 'application/json'
@@ -202,12 +240,18 @@ export const updateChoreDoc =
 
 			dispatch({ type: GET_INDIVIDUAL_COURSE, payload: res.data });
 			dispatch(setAlert(res.data.msg, 'success'));
+
+			NProgress.done();
 		} catch (err) {
 			console.log(err);
+
+			NProgress.done();
 		}
 	};
 
 export const createStudyMaterial = (studyMaterial, courseId) => async (dispatch) => {
+	NProgress.start();
+
 	const config = {
 		headers: {
 			'Content-Type': 'application/json'
@@ -221,8 +265,12 @@ export const createStudyMaterial = (studyMaterial, courseId) => async (dispatch)
 
 		dispatch({ type: GET_INDIVIDUAL_COURSE, payload: res.data });
 		dispatch(setAlert(res.data.msg, 'success'));
+
+		NProgress.done();
 	} catch (err) {
 		console.log(err);
+		
+		NProgress.done();
 	}
 };
 
@@ -240,8 +288,12 @@ export const updateStudyMaterial = (studyMaterial, courseId, noteId) => async (d
 
 		dispatch({ type: GET_INDIVIDUAL_COURSE, payload: res.data });
 		dispatch(setAlert(res.data.msg, 'success'));
+
+		NProgress.done();
 	} catch (err) {
 		console.log(err);
+
+		NProgress.done();
 	}
 };
 
@@ -292,6 +344,8 @@ export const getStudentsEnrolled = (courseId) => async (dispatch) => {
 };
 
 export const updateCourse = (course, courseId) => async (dispatch) => {
+	NProgress.start();
+
 	const config = {
 		headers: {
 			'Content-Type': 'application/json'
@@ -305,7 +359,11 @@ export const updateCourse = (course, courseId) => async (dispatch) => {
 
 		dispatch({ type: GET_ACCOUNT, payload: res.data });
 		dispatch(setAlert(res.data.msg, 'success'));
+
+		NProgress.done();
 	} catch (err) {
 		console.log(err);
+
+		NProgress.done();
 	}
 };

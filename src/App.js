@@ -2,6 +2,8 @@ import { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
+import 'nprogress/nprogress.css';
+
 import store from './reduxStore/store';
 import { getAccount } from './reduxStore/actions/auth';
 

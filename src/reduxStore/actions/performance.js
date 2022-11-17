@@ -1,9 +1,13 @@
 import axios from '../../utils/axiosInstance';
 
+import NProgress from 'nprogress';
+
 import { GET_ACCOUNT, GET_PERFORMANCE, GET_STUDENTS } from '../types';
 import { setAlert } from './alert';
 
 export const enrollCourse = (accessCode) => async (dispatch) => {
+	NProgress.start();
+
 	const config = {
 		headers: {
 			'Content-Type': 'application/json'
@@ -18,12 +22,16 @@ export const enrollCourse = (accessCode) => async (dispatch) => {
 
 		dispatch({ type: GET_ACCOUNT, payload: res.data });
 		dispatch(setAlert(res.data.msg, 'success'));
+
+		NProgress.done();
 	} catch (err) {
 		const errors = err.response.data.errors;
 
 		errors.forEach((error) => {
 			dispatch(setAlert(error.msg, 'error'));
 		});
+
+		NProgress.done();
 	}
 };
 
@@ -48,6 +56,8 @@ export const getStudentPerformance = (studentId) => async (dispatch) => {
 };
 
 export const submitAssignment = (assignment, courseId, assignmentId) => async (dispatch) => {
+	NProgress.start();
+
 	const config = {
 		headers: {
 			'Content-Type': 'application/json'
@@ -65,12 +75,18 @@ export const submitAssignment = (assignment, courseId, assignmentId) => async (d
 
 		dispatch({ type: GET_PERFORMANCE, payload: res.data.performance });
 		dispatch(setAlert(res.data.msg, 'success'));
+
+		NProgress.done();
 	} catch (err) {
 		console.log(err);
+
+		NProgress.done();
 	}
 };
 
 export const unsubmitAssignment = (courseId, assignmentId, documentId) => async (dispatch) => {
+	NProgress.start();
+
 	try {
 		const res = await axios.delete(
 			`/performance/assignment/${courseId}/${assignmentId}/${documentId}`
@@ -78,8 +94,12 @@ export const unsubmitAssignment = (courseId, assignmentId, documentId) => async 
 
 		dispatch({ type: GET_PERFORMANCE, payload: res.data.performance });
 		dispatch(setAlert(res.data.msg, 'success'));
+
+		NProgress.done();
 	} catch (err) {
 		console.log(err);
+
+		NProgress.done();
 	}
 };
 
@@ -107,6 +127,8 @@ export const gradeAssignment = (marks, studentId, courseId, assignmentId) => asy
 };
 
 export const submitProject = (project, courseId, projectId) => async (dispatch) => {
+	NProgress.start();
+
 	const config = {
 		headers: {
 			'Content-Type': 'application/json'
@@ -119,8 +141,12 @@ export const submitProject = (project, courseId, projectId) => async (dispatch) 
 		const res = await axios.post(`/performance/project/${courseId}/${projectId}`, body, config);
 
 		dispatch({ type: GET_PERFORMANCE, payload: res.data.performance });
+
+		NProgress.done();
 	} catch (err) {
 		console.log(err);
+
+		NProgress.done();
 	}
 };
 
@@ -145,12 +171,18 @@ export const removeProjectTeamMember = (courseId, memberId) => async (dispatch) 
 };
 
 export const unsubmitProject = (courseId, documentId) => async (dispatch) => {
+	NProgress.start();
+
 	try {
 		const res = await axios.delete(`/performance/project/${courseId}/${documentId}`);
 
 		dispatch({ type: GET_PERFORMANCE, payload: res.data.teamLeader });
+
+		NProgress.done();
 	} catch (err) {
 		console.log(err);
+
+		NProgress.done();
 	}
 };
 
