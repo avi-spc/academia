@@ -17,9 +17,9 @@ const Announcement = ({
 			<div className="announcement">
 				<span className="icon icon--dark material-symbols-outlined">campaign</span>
 				<div className="announcement__title text-medium-SB">{announcement.title}</div>
-				{/* <div className="announcement__timestamp text-small-R">
+				<div className="announcement__timestamp text-small-R">
 					{timeInWords(announcement.createdAt)}
-				</div> */}
+				</div>
 				{account.type === 'instructor' && (
 					<div className="more-p-dropdown">
 						<span
