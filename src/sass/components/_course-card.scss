@@ -66,6 +66,10 @@
 		grid-gap: 5rem 5rem;
 
 		margin-top: 5rem;
+
+		@include responsive(phone) {
+			grid-template-columns: 1fr;
+		}
 	}
 
 	.join-or-create {

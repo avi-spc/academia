@@ -9,6 +9,12 @@
 
 html {
   font-size: 45%; }
+  @media (max-width: 56.25em) {
+    html {
+      font-size: 40%; } }
+  @media (max-width: 37.5em) {
+    html {
+      font-size: 38%; } }
 
 body {
   font-family: 'Fredoka', sans-serif;
@@ -95,7 +101,11 @@ button a {
 
 .container-large {
   max-width: 112rem;
-  margin: 5rem auto; }
+  margin: 5rem auto;
+  transition: all 0.2s; }
+  @media (max-width: 56.25em) {
+    .container-large {
+      padding: 0 5rem; } }
 
 .material-symbols-outlined {
   font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
@@ -404,6 +414,9 @@ button a {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   grid-gap: 5rem 5rem;
   margin-top: 5rem; }
+  @media (max-width: 37.5em) {
+    .course-docket__courses-list {
+      grid-template-columns: 1fr; } }
 
 .course-docket .join-or-create {
   display: flex;
@@ -606,7 +619,11 @@ button a {
 .individual-course__work {
   display: grid;
   grid-template-columns: 1fr 2.2fr;
-  grid-gap: 5rem; }
+  grid-gap: 5rem;
+  transition: all 0.2s; }
+  @media (max-width: 37.5em) {
+    .individual-course__work {
+      grid-template-columns: 1fr; } }
   .individual-course__work__category {
     display: flex;
     justify-content: space-between;
@@ -637,6 +654,7 @@ button a {
   left: 0;
   padding: 2rem 2.5rem;
   width: 100%;
+  z-index: 100;
   background-color: #242424;
   border-radius: 2rem; }
   .category-list a:not(:first-child) {
@@ -678,7 +696,11 @@ button a {
   align-items: center;
   max-width: 112rem;
   margin: 0.5rem auto;
-  color: #d9d9d9; }
+  color: #d9d9d9;
+  transition: all 0.2s; }
+  @media (max-width: 56.25em) {
+    .navbar {
+      padding: 0 5rem; } }
   .navbar-parent {
     background-color: #242424; }
   .navbar__logo {

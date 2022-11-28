@@ -1,3 +1,23 @@
+@mixin responsive($breakpoint) {
+	@if ($breakpoint==phone) {
+		@media (max-width: 37.5em) {
+			@content;
+		}
+	}
+
+	@if ($breakpoint==tab_p) {
+		@media (max-width: 56.25em) {
+			@content;
+		}
+	}
+
+	@if ($breakpoint==tab_l) {
+		@media (max-width: 75em) {
+			@content;
+		}
+	}
+}
+
 *,
 *::before,
 *::after {
@@ -8,6 +28,14 @@
 
 html {
 	font-size: 45%;
+
+	@include responsive(tab_p) {
+		font-size: 40%;
+	}
+
+	@include responsive(phone) {
+		font-size: 38%;
+	}
 }
 
 body {

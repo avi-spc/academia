@@ -8,6 +8,12 @@
 	margin: 0.5rem auto;
 	color: $color-text-primary;
 
+	transition: all 0.2s;
+
+	@include responsive(tab_p) {
+		padding: 0 5rem;
+	}
+
 	&-parent {
 		background-color: $color-surface-secondary;
 	}

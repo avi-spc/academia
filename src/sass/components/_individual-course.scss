@@ -50,6 +50,12 @@
 		grid-template-columns: 1fr 2.2fr;
 		grid-gap: 5rem;
 
+		transition: all 0.2s;
+
+		@include responsive(phone) {
+			grid-template-columns: 1fr;
+		}
+
 		&__category {
 			display: flex;
 			justify-content: space-between;
@@ -97,6 +103,8 @@
 	left: 0;
 	padding: 2rem 2.5rem;
 	width: 100%;
+
+	z-index: 100;
 
 	background-color: $color-surface-secondary;
 	border-radius: $border-radius-medium;
