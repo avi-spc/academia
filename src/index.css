@@ -14,7 +14,7 @@ html {
       font-size: 40%; } }
   @media (max-width: 37.5em) {
     html {
-      font-size: 38%; } }
+      font-size: 35%; } }
 
 body {
   font-family: 'Fredoka', sans-serif;
@@ -160,6 +160,11 @@ button a {
   height: 100%;
   background-color: #242424;
   border-radius: 2.5rem 0 0 2.5rem; }
+  @media (max-width: 56.25em) {
+    .sign-up,
+    .sign-in {
+      align-items: center;
+      border-radius: 2.5rem; } }
   .sign-up .account-type-tabs,
   .sign-in .account-type-tabs {
     display: grid;
@@ -225,9 +230,13 @@ button a {
     max-width: 70rem;
     object-fit: cover;
     border-radius: 0 2.5rem 2.5rem 0; }
+    @media (max-width: 56.25em) {
+      .auth-parent .side-image {
+        display: none; } }
 
 .btn {
   font-family: 'Fredoka', sans-serif;
+  text-align: center;
   color: #1e1e1e;
   background-color: #cb9efb;
   border-style: none;
@@ -262,6 +271,9 @@ button a {
     font-weight: 500;
     padding: 2.3rem;
     border-radius: 2rem; }
+    @media (max-width: 37.5em) {
+      .btn--round {
+        padding: 2.3rem 1.5rem; } }
   .btn--cancel {
     font-size: 2rem;
     font-weight: 500;
@@ -322,6 +334,9 @@ button a {
       margin-top: 0.3rem; }
     .chore__details > div:nth-child(2), .chore__submission-details > div:nth-child(2) {
       margin-left: 7rem; }
+      @media (max-width: 37.5em) {
+        .chore__details > div:nth-child(2), .chore__submission-details > div:nth-child(2) {
+          margin-left: 5rem; } }
     .chore__details button,
     .chore__details a, .chore__submission-details button,
     .chore__submission-details a {

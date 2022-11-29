@@ -42,6 +42,10 @@
 
 		& > div:nth-child(2) {
 			margin-left: 7rem;
+
+			@include responsive(phone) {
+				margin-left: 5rem;
+			}
 		}
 
 		button,

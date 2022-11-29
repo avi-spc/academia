@@ -1,5 +1,6 @@
 .btn {
 	font-family: 'Fredoka', sans-serif;
+	text-align: center;
 
 	color: $color-text-accent;
 	background-color: $color-accent-primary;
@@ -56,6 +57,10 @@
 
 		padding: 2.3rem;
 		border-radius: $border-radius-medium;
+
+		@include responsive(phone){
+			padding: 2.3rem 1.5rem;
+		}
 	}
 
 	&--cancel {

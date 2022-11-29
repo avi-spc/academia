@@ -12,6 +12,11 @@
 	background-color: $color-surface-secondary;
 	border-radius: $border-radius-large 0 0 $border-radius-large;
 
+	@include responsive(tab_p) {
+		align-items: center;
+		border-radius: $border-radius-large;
+	}
+
 	.account-type-tabs {
 		display: grid;
 		grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -98,5 +103,9 @@
 		object-fit: cover;
 
 		border-radius: 0 $border-radius-large $border-radius-large 0;
+
+		@include responsive(tab_p) {
+			display: none;
+		}
 	}
 }
