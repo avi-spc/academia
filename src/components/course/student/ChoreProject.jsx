@@ -69,7 +69,7 @@ const ChoreProject = ({
 						href={`${baseUrl}/performance/submissions/file/${coursePerformance.course.project.documentId}`}
 						target="_blank"
 					>
-						View details
+						Details
 					</a>
 				</div>
 				<div className="chore__submission-details">
@@ -82,7 +82,7 @@ const ChoreProject = ({
 								</div>
 							</div>
 							<div>
-								<label>Obtained</label>
+								<label>Score</label>
 								<div className="chore__submission-details__points text-large-M">
 									{'marksObtained' in coursePerformance.project
 										? coursePerformance.project.marksObtained
@@ -94,7 +94,7 @@ const ChoreProject = ({
 								href={`${baseUrl}/performance/submissions/file/${coursePerformance.project.documentId}`}
 								target="_blank"
 							>
-								View submission
+								Submission
 							</a>
 							{!('marksObtained' in coursePerformance.project) && (
 								<button

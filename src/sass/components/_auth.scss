@@ -17,6 +17,11 @@
 		border-radius: $border-radius-large;
 	}
 
+	@include responsive(phone) {
+		padding: 10rem 6rem;
+		min-width: 60rem;
+	}
+
 	.account-type-tabs {
 		display: grid;
 		grid-template-columns: repeat(2, minmax(0, 1fr));

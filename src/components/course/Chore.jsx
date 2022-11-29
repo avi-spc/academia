@@ -84,7 +84,7 @@ const Chore = ({
 						href={`${baseUrl}/performance/submissions/file/${chore.documentId}`}
 						target="_blank"
 					>
-						View details
+						Details
 					</a>
 				</div>
 			</div>

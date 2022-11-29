@@ -165,6 +165,11 @@ button a {
     .sign-in {
       align-items: center;
       border-radius: 2.5rem; } }
+  @media (max-width: 37.5em) {
+    .sign-up,
+    .sign-in {
+      padding: 10rem 6rem;
+      min-width: 60rem; } }
   .sign-up .account-type-tabs,
   .sign-in .account-type-tabs {
     display: grid;
@@ -336,7 +341,7 @@ button a {
       margin-left: 7rem; }
       @media (max-width: 37.5em) {
         .chore__details > div:nth-child(2), .chore__submission-details > div:nth-child(2) {
-          margin-left: 5rem; } }
+          margin-left: 4rem; } }
     .chore__details button,
     .chore__details a, .chore__submission-details button,
     .chore__submission-details a {
