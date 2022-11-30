@@ -17,7 +17,7 @@ const ProjectSubmission = ({ studentId, submission }) => {
 					</div>
 				</div>
 				<div>
-					<label>Obtained</label>
+					<label>Score</label>
 					<div className="chore__details__points text-large-M">
 						{'marksObtained' in submission ? submission.marksObtained : 'NG'}
 					</div>
@@ -27,7 +27,7 @@ const ProjectSubmission = ({ studentId, submission }) => {
 					href={`${baseUrl}/performance/submissions/file/${submission.documentId}`}
 					target="_blank"
 				>
-					View submission
+					Submission
 				</a>
 			</div>
 			<div className="chore__project-details">

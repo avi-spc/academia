@@ -2,7 +2,8 @@
 .sign-in {
 	display: flex;
 	flex-direction: column;
-	align-items: start;
+	// justify-content: center;
+	align-items: flex-start;
 
 	padding: 6rem 8rem;
 
@@ -17,9 +18,8 @@
 		border-radius: $border-radius-large;
 	}
 
-	@include responsive(phone) {
-		padding: 10rem 6rem;
-		min-width: 60rem;
+	@include responsive(phone){
+		min-width: 65rem;
 	}
 
 	.account-type-tabs {
@@ -112,5 +112,10 @@
 		@include responsive(tab_p) {
 			display: none;
 		}
+	}
+
+	@include responsive(phone) {
+		background-color: $color-surface-secondary;
+		border-radius: 0;
 	}
 }

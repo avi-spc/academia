@@ -90,7 +90,11 @@ export const submitAssignment = (assignment, courseId, assignmentId) => async (d
 
 		NProgress.done();
 	} catch (err) {
-		console.log(err);
+		const errors = err.response.data.errors;
+
+		errors.forEach((error) => {
+			dispatch(setAlert(error.msg, 'error'));
+		});
 
 		NProgress.done();
 	}
