@@ -9,6 +9,11 @@
 
 	background-color: $color-surface-secondary;
 	border-radius: $border-radius-extra-large;
+
+	@include responsive(phone){
+		margin-left: 2rem;
+		margin-right: 2rem;
+	}
 }
 
 .container-large {

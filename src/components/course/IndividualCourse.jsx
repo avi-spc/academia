@@ -106,17 +106,23 @@ const IndividualCourse = ({
 								<Link to={`/courses/${course_id}/notes`}>Notes</Link>
 							</ul>
 						)}
-						<span className="material-symbols-outlined">expand_circle_down</span>
+						<span
+							className={`material-symbols-outlined ${showDropdown ? 'reverse' : ''}`}
+						>
+							expand_circle_down
+						</span>
 					</div>
 					<div className="individual-course__work__chore-p-create">
-						{account.type === 'instructor' && location.pathname.split('/').length <= 4 && (
-							<button
-								className="btn btn--capsule create"
-								onClick={() => togglePopup(!popup.isVisible)}
-							>
-								<span className="material-symbols-outlined">add_circle</span>Create
-							</button>
-						)}
+						{account.type === 'instructor' &&
+							location.pathname.split('/').length <= 4 && (
+								<button
+									className="btn btn--capsule create"
+									onClick={() => togglePopup(!popup.isVisible)}
+								>
+									<span className="material-symbols-outlined">add_circle</span>
+									Create
+								</button>
+							)}
 						<ul className="individual-course__work__list">
 							<Outlet context={{ individualCourse }} />
 						</ul>

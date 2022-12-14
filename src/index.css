@@ -98,6 +98,10 @@ button a {
   padding: 1rem;
   background-color: #242424;
   border-radius: 3rem; }
+  @media (max-width: 37.5em) {
+    .container-medium {
+      margin-left: 2rem;
+      margin-right: 2rem; } }
 
 .container-large {
   max-width: 112rem;
@@ -440,6 +444,8 @@ button a {
   @media (max-width: 37.5em) {
     .course-docket__courses-list {
       grid-template-columns: 1fr; } }
+  .course-docket__courses-list > div:last-child {
+    height: 28rem; }
 
 .course-docket .join-or-create {
   display: flex;
@@ -657,9 +663,12 @@ button a {
     border-radius: 2rem;
     position: relative;
     text-transform: capitalize;
-    cursor: pointer; }
+    cursor: pointer;
+    transition: all 0.2s; }
     .individual-course__work__category:hover {
       background-color: #242424; }
+    .individual-course__work__category .reverse {
+      transform: rotate(180deg); }
   .individual-course__work__chore-p-create {
     display: flex;
     flex-direction: column; }

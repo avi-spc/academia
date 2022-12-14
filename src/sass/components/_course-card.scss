@@ -70,6 +70,10 @@
 		@include responsive(phone) {
 			grid-template-columns: 1fr;
 		}
+
+		& > div:last-child {
+			height: 28rem;
+		}
 	}
 
 	.join-or-create {

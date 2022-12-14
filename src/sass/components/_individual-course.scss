@@ -71,8 +71,14 @@
 
 			cursor: pointer;
 
+			transition: all 0.2s;
+
 			&:hover {
 				background-color: $color-surface-secondary;
+			}
+
+			.reverse {
+				transform: rotate(180deg);
 			}
 		}
 
