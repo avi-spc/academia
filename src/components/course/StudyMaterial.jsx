@@ -5,7 +5,6 @@ import { toggleUpdatePopup, toggleUpdateDocPopup } from '../../reduxStore/action
 import { timeInWords } from '../../utils/timestampFormatter';
 import { baseUrl } from '../../utils/env';
 
-
 const StudyMaterialDocket = ({
 	popup,
 	toggleUpdatePopup,
@@ -66,7 +65,7 @@ const StudyMaterialDocket = ({
 						href={`${baseUrl}/performance/submissions/file/${note.documentId}`}
 						target="_blank"
 					>
-						View PDF
+						PDF
 					</a>
 				</div>
 			</div>
