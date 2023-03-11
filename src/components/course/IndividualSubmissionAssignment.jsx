@@ -9,6 +9,7 @@ import Chore from './Chore';
 import ChoreAssignment from './student/ChoreAssignment';
 import AssignmentSubmission from './student/AssignmentSubmission';
 import GradeChore from '../create/GradeChore';
+import { useDocumentTitle } from '../../hooks/useDcoumentTitle';
 
 const IndividualSubmissionAssignment = ({
 	getStudentPerformance,
@@ -42,6 +43,13 @@ const IndividualSubmissionAssignment = ({
 	const chore = individualCourse.course.assignments.find((assignment) => {
 		return assignment._id === assignment_id;
 	});
+
+	const choreTitle = chore.title
+	.split(' ')
+	.map((word) => word[0].toUpperCase() + word.substring(1))
+	.join(' ');
+
+	useDocumentTitle(`${choreTitle} · Submissions`);
 
 	return (
 		submission && (

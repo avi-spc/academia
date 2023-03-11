@@ -6,6 +6,7 @@ import { loginAccount } from '../../reduxStore/actions/auth';
 
 import StudentSignIn from './StudentSignIn';
 import InstructorSignIn from './InstructorSignIn';
+import { useDocumentTitle } from '../../hooks/useDcoumentTitle';
 
 const SignIn = ({ loginAccount, auth: { isAuthenticated, loading } }) => {
 	const navigate = useNavigate();
@@ -23,6 +24,8 @@ const SignIn = ({ loginAccount, auth: { isAuthenticated, loading } }) => {
 	};
 
 	const [accountType, setAccountType] = useState('student');
+
+	useDocumentTitle('');
 
 	return (
 		<div className="auth-parent">

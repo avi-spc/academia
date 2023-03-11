@@ -8,6 +8,7 @@ import { togglePopup } from '../../reduxStore/actions/popus';
 import Chore from './Chore';
 import GradeChore from '../create/GradeChore';
 import ProjectSubmission from './student/ProjectSubmission';
+import { useDocumentTitle } from '../../hooks/useDcoumentTitle';
 
 const IndividualSubmissionProject = ({
 	getStudentPerformance,
@@ -35,6 +36,13 @@ const IndividualSubmissionProject = ({
 	}, [performance]);
 
 	const chore = individualCourse.course.project;
+	
+	const choreTitle = chore.title
+	.split(' ')
+	.map((word) => word[0].toUpperCase() + word.substring(1))
+	.join(' ');
+
+	useDocumentTitle(`${choreTitle} · Submissions`);
 
 	return (
 		submission && (

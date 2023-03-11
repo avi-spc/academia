@@ -6,6 +6,7 @@ import { registerAccount } from '../../reduxStore/actions/auth';
 import { setAlert } from '../../reduxStore/actions/alert';
 import StudentSignUp from './StudentSignUp';
 import InstructorSignUp from './InstructorSignUp';
+import { useDocumentTitle } from '../../hooks/useDcoumentTitle';
 
 const SignUp = ({ registerAccount, setAlert, auth: { isAuthenticated, loading } }) => {
 	const navigate = useNavigate();
@@ -23,6 +24,8 @@ const SignUp = ({ registerAccount, setAlert, auth: { isAuthenticated, loading } 
 	};
 
 	const [accountType, setAccountType] = useState('student');
+
+	useDocumentTitle('');
 
 	return (
 		<div className="auth-parent">

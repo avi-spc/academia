@@ -1,5 +1,6 @@
 import { Fragment, useState } from 'react';
 import { connect } from 'react-redux';
+import { useDocumentTitle } from '../../hooks/useDcoumentTitle';
 
 import CreateChore from '../create/CreateChore';
 import UpdateChore from '../update/UpdateChore';
@@ -8,6 +9,8 @@ import Chore from './Chore';
 
 const AssignmentDocket = ({ popup, individualCourse }) => {
 	const [choreDetails, setChoreDetails] = useState(null);
+
+	useDocumentTitle('Assignments');
 
 	return (
 		<Fragment>

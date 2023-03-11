@@ -6,6 +6,7 @@ import { getStudents } from '../../reduxStore/actions/performance';
 
 import Chore from './Chore';
 import SubmissionsDocket from './SubmissionsDocket';
+import { useDocumentTitle } from '../../hooks/useDcoumentTitle';
 
 const ChoreSubmissions = ({ getStudents, performance }) => {
 	const { chore_id, chore_type } = useParams();
@@ -21,6 +22,13 @@ const ChoreSubmissions = ({ getStudents, performance }) => {
 	useEffect(() => {
 		getStudents(chore_id, chore_type);
 	}, [chore_id]);
+
+	const choreTitle = chore.title
+		.split(' ')
+		.map((word) => word[0].toUpperCase() + word.substring(1))
+		.join(' ');
+
+	useDocumentTitle(`${choreTitle} · Submissions`);
 
 	return (
 		chore && (

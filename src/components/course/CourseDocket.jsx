@@ -9,6 +9,7 @@ import CreateCourse from '../create/CreateCourse';
 import CourseCard from './CourseCard';
 import JoinCourse from './student/JoinCourse';
 import UpdateCourse from '../update/UpdateCourse';
+import { useDocumentTitle } from '../../hooks/useDcoumentTitle';
 
 const CourseDocket = ({ togglePopup, getPerformance, popup, auth: { account } }) => {
 	const [courseDetails, setCourseDetails] = useState(null);
@@ -18,6 +19,8 @@ const CourseDocket = ({ togglePopup, getPerformance, popup, auth: { account } })
 			getPerformance();
 		}
 	}, [account]);
+
+	useDocumentTitle('Courses');
 
 	return (
 		account && (

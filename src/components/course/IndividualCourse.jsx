@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 
 import { togglePopup } from '../../reduxStore/actions/popus';
 import { getIndividualCourse, getAnnouncements } from '../../reduxStore/actions/course';
+import { useDocumentTitle } from '../../hooks/useDcoumentTitle';
 
 const IndividualCourse = ({
 	getIndividualCourse,
@@ -42,6 +43,8 @@ const IndividualCourse = ({
 
 		return tab;
 	};
+
+	useDocumentTitle(activeTab[0].toUpperCase() + activeTab.substring(1));
 
 	return (
 		individualCourse.course && (

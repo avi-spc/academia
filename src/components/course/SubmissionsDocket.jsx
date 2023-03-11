@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
+import { useDocumentTitle } from '../../hooks/useDcoumentTitle';
 
 const SubmissionsDocket = ({ students, choreId, courseId, choreType }) => {
+
 	return (
 		<div className="submissions-docket">
 			{students.map((student) => (
