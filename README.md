@@ -87,7 +87,6 @@ npm run sass
 ![Courses](./public/img/screenshots/student-courses.png)
 ![Assignments](./public/img/screenshots/student-assignments.png)
 ![Project](./public/img/screenshots/student-project_submission.png)
-![Project Submission](./public/img/screenshots/student-project_submission.png)
 
 #### Submission Forms
 ![Enroll Course](./public/img/screenshots/student-enroll.png)
